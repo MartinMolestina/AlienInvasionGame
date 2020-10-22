@@ -1,0 +1,7 @@
+In Alien Invasion, the player controls a ship that appears at the bottom of the screen.  The ship can move right and left using the arrow keys, and shoot with the space bar.
+
+When the game begins, aliens fill the sky and move across the screen.  The player must shoot the aliens to destroy them. 
+
+If the player is able to shoot all the aliens, a new fleet of aliens appear that move faster.  If any alien crashes with the player or is able to get to the bottom of the screen the player loses a ship.  If the player looses 3 thips the game ends.
+
+Project form: Python Crash Course 2nd Edition
