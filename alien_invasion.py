@@ -4,6 +4,8 @@ from settings import Settings
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
+from star import Star
+from random import randint
 
 
 
@@ -29,8 +31,25 @@ class AlienInvasion:
 		self.ship = Ship(self)
 		self.bullets = pygame.sprite.Group()
 		self.aliens = pygame.sprite.Group()
+		self.stars = pygame.sprite.Group()
+		self._create_universe()
 		self._create_fleet()
 
+
+	def _create_universe(self):
+		# Make a star
+		star = Star(self)
+
+		for _ in range(10):
+			x = randint(50, 1150)
+			y = randint(50, 750)
+			self._create_star(x,y)
+
+	def _create_star(self, x, y):
+		star = Star(self)
+		star.rect.x = x 
+		star.rect.y = y
+		self.stars.add(star)
 
 	def _create_fleet(self):
 		# Make an alien
@@ -96,6 +115,7 @@ class AlienInvasion:
 		Upadte images on screen and flip new screeb
 		'''
 		self.screen.fill(self.settings.bg_color)
+		self.stars.draw(self.screen)
 		self.ship.blitme()
 
 		for bullet in self.bullets.sprites():
