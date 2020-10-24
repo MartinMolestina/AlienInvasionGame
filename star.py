@@ -1,5 +1,6 @@
 import pygame
 from pygame.sprite import Sprite 
+from random import randint
 
 
 class Star(Sprite):
@@ -10,7 +11,14 @@ class Star(Sprite):
 		self.settings = ai_game.settings
 
 		# Load the star image and set its rect
-		self.image = pygame.image.load('Images/stars.bmp')
+		size = randint(1,3)
+		if size == 1:
+			self.image = pygame.image.load('Images/stars_smll.bmp')
+		elif size == 2:
+			self.image = pygame.image.load('Images/stars_med.bmp')
+		elif size == 3:
+			self.image = pygame.image.load('Images/stars_large.bmp')
+
 		self.rect = self.image.get_rect()
 
 		# Start new star near the top left
@@ -24,6 +32,6 @@ class Star(Sprite):
 		'''
 		Move the star through the screen
 		'''
-		self.rect.y += self.settings.star_speed
+		self.rect.y += self.settings.star_speed*randint(0,3)
 		
 

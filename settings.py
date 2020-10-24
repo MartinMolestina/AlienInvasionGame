@@ -23,4 +23,4 @@ class Settings:
 
 		# Stars settings
 		self.star_speed = 1
-		self.num_stars = 3
+		self.num_stars = 5

@@ -55,7 +55,7 @@ class AlienInvasion:
 
 				# Adds a new star at top after a star has been deleted 
 				new_star = Star(self)
-				new_star.rect.y = 0 #randint(50, int(self.settings.screen_width)-50)
+				new_star.rect.y = 0
 				new_star.rect.x = randint(50, int(self.settings.screen_width)-50)
 				self.stars.add(new_star)
 
