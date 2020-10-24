@@ -22,5 +22,5 @@ class Settings:
 		self.bullets_allowed = 4
 
 		# Stars settings
-		self.star_speed = 0.5
-		self.num_stars = 5
+		self.star_speed = 1
+		self.num_stars = 3

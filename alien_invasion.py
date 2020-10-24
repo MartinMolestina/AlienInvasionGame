@@ -37,27 +37,29 @@ class AlienInvasion:
 
 
 	def _create_universe(self):
-		# Make a star
-		star = Star(self)
-
+		# Make stars
 		for _ in range(self.settings.num_stars):
-			x = randint(50, int(self.settings.screen_width)-50)
-			y = randint(50, int(self.settings.screen_height)-50)
-			self._create_star(x,y)
-
-	def _create_star(self, x, y):
-		star = Star(self)
-		star.rect.x = x 
-		star.rect.y = y
-		self.stars.add(star)
+			star = Star(self)
+			star.rect.x = randint(0, self.settings.screen_width)
+			star.rect.y = randint(0, self.settings.screen_height)
+			self.stars.add(star)
 
 
 	def _update_stars(self):
 		self.stars.update()
-		# Delete bullets that exit the screen
+		# Delete stars that exit the screen
 		for star in self.stars.copy():
-			if star.rect.bottom >= self.settings.screen_height:
-				self.star.remove(star)
+			if star.rect.bottom > self.settings.screen_height:
+				# Removes star from list
+				self.stars.remove(star)
+
+				# Adds a new star at top after a star has been deleted 
+				new_star = Star(self)
+				new_star.rect.y = 0 #randint(50, int(self.settings.screen_width)-50)
+				new_star.rect.x = randint(50, int(self.settings.screen_width)-50)
+				self.stars.add(new_star)
+
+		
 
 
 	def _create_fleet(self):
@@ -123,8 +125,8 @@ class AlienInvasion:
 		Upadte images on screen and flip new screeb
 		'''
 		self.screen.fill(self.settings.bg_color)
-		for star in self.stars.sprites():
-			self.stars.draw(self.screen)
+
+		self.stars.draw(self.screen)
 
 		self.ship.blitme()
 
@@ -189,8 +191,6 @@ class AlienInvasion:
 			self._update_stars()
 			self._update_bullets()
 			self._update_screen()
-
-
 
 
 def main():

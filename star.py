@@ -16,7 +16,7 @@ class Star(Sprite):
 		# Start new star near the top left
 		self.rect.x = self.rect.width
 		self.rect.y = self.rect.height
-		self.y = float(self.rect.y)
+		#self.y = float(self.rect.y)
 
 
 
@@ -24,8 +24,6 @@ class Star(Sprite):
 		'''
 		Move the star through the screen
 		'''
-		# Update decimal position of the bullet
-		self.y += self.settings.star_speed
-		# Update the rect position
-		self.rect.y = self.y
+		self.rect.y += self.settings.star_speed
+		
 
