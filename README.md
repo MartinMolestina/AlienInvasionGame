@@ -1,9 +1,9 @@
 # AlienInvasionGame
-Alien shooter game using pygame.
+### Alien shooter game using pygame.
 
-This game was made following Python Crash Course 2nd Edition book and adding extra features.
+This game was made following **Python Crash Course 2nd Edition** book and adding extra features.
 
-It's a fun project to apply and learn OOP.  The project is divided in several files to make it more managable.
+It's a fun project to apply and learn **OOP**.  The project is divided in several files to make it more managable.
 
 The code is scalable and various helper methods have been created the make the code easier to understand.
 
